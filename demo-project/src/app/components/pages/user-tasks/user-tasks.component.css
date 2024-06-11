@@ -1,0 +1,18 @@
+.tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tasks-header button {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #8951d6;
+  border-radius: 4px;
+}
+
+.tasks-header button:hover {
+  background-color: #7f42d4;
+}

@@ -1,0 +1,46 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 15%;
+  background-color: #080410;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+}
+
+.users {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.users ul li {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.tasks {
+  width: 100%;
+  background-color: #2f233f;
+  border-radius: 12px;
+  height: fit-content;
+  padding: 16px;
+}
+
+.tasks h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .app {
+    padding: 50px 5%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,45 @@
+<div class="add-task">
+  <h2>Add Task</h2>
+  <form [formGroup]="addTaskForm" (ngSubmit)="ngAddTask()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Enter title" formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Summary</mat-label>
+      <textarea
+        matInput
+        placeholder="Enter task summary"
+        formControlName="summary"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Due date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        placeholder="Choose a date"
+        formControlName="due_date"
+      />
+      <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="actions">
+      <button
+        type="button"
+        class="btn-cancel"
+        (click)="closeAddNewTaskScreen()"
+      >
+        Cancel
+      </button>
+      <button type="submit" class="btn-create">Create</button>
+    </div>
+  </form>
+</div>

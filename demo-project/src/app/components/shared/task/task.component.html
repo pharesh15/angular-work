@@ -1,0 +1,10 @@
+<div class="task">
+  <h3>{{ task.title }}</h3>
+  <span>{{ task.due_date | date : "dd/MM/yyyy" }}</span>
+  <p>
+    {{ task.summary }}
+  </p>
+  <div class="btn">
+    <button (click)="ngCompleteTask()">Complete</button>
+  </div>
+</div>

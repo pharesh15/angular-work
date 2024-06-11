@@ -1,0 +1,40 @@
+.task {
+  color: #000;
+  background-color: #b38ee0;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.task h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.task span {
+  font-size: 14px;
+  margin: 0;
+  color: #1d0242;
+  font-weight: 600;
+}
+
+.task p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.task button {
+  background-color: #290360;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.task button:hover {
+  background-color: #1d0242;
+}
+
+.task .btn {
+  margin-top: 20px;
+  text-align: right;
+}

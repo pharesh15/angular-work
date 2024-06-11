@@ -1,0 +1,22 @@
+<div class="app">
+  <app-header />
+  <div class="main">
+    <div class="users">
+      <ul>
+        @for (user of users; track user.id) {
+        <li>
+          <!-- provide data to child component -->
+          <app-users [data]="user" (selectedUser)="ngSelectedeUser($event)" />
+        </li>
+        }
+      </ul>
+    </div>
+    <div class="tasks">
+      @if(userData){
+      <app-user-tasks [data]="userData" />
+      }@else{
+      <h3>Select user to see their tasks!</h3>
+      }
+    </div>
+  </div>
+</div>

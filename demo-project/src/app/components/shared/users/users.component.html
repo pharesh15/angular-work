@@ -1,0 +1,8 @@
+<button class="user-btn" (click)="ngSelectUser()">
+    <div class="avatar">
+        <!-- property binding on src -->
+        <img [src]="'assets/images/' + data.img" alt="">
+    </div>
+    <!-- string interpolation -->
+    <p>{{data.name}}</p> 
+</button>

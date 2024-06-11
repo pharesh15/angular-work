@@ -1,0 +1,16 @@
+@if(isAddNewTaskScreenActive){
+<app-add-task [user_id]="data.id" (addTaskData)="ngAddTask($event)" />
+}@else{
+<div class="tasks-header">
+  <h2>{{ data.name }}'s Tasks</h2>
+  <button (click)="ngOpenAddNewTaskScreen()">Add Task</button>
+</div>
+<div class="tasks-list">
+  @if(usersTasksData && usersTasksData.length > 0){ @for (task of
+  usersTasksData; track task.id) {
+  <app-task [task]="task" />
+  } }@else{
+  <h4>No Tasks Found</h4>
+  }
+</div>
+}

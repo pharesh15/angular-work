@@ -1,0 +1,43 @@
+.user-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  background-color: #2f233f;
+  width: 200px;
+  padding: 8px 12px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.active {
+  background-color: #8951d6;
+}
+
+.user-btn:hover {
+  background-color: #8951d6;
+}
+
+.avatar {
+  margin-right: 15px;
+}
+
+.avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.user-btn p {
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  height: 16px;
+  margin: 0;
+}
