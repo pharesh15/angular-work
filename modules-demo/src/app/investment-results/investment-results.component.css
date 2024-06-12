@@ -1,0 +1,52 @@
+.results {
+  margin-top: 3rem;
+  width: 40%;
+  margin: auto;
+}
+
+.results p {
+  text-align: center;
+  color: #fff;
+}
+
+table {
+  width: 100%;
+  text-align: right;
+}
+
+table thead {
+  color: #207258;
+}
+
+table tbody {
+  color: #fff;
+}
+
+th,
+td {
+  padding: 0.5rem 0.4rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  .results {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .results {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .results {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .results {
+    width: 100%;
+  }
+}

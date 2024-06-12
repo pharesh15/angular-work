@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { ICalculator, IInvestmentResults } from './models/CalculatorModel';
 
 @Component({
   selector: 'app-root',
