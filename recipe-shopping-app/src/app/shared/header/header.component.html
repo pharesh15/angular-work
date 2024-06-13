@@ -1,1 +1,33 @@
-<p>header works!</p>
+<div class="header flex-center-between">
+  <div class="left flex-center-between">
+    <div class="logo">
+      <h2>Recipe Book</h2>
+    </div>
+    <div class="navs">
+      <ul class="flex-center-between">
+        <li>
+          <a [routerLink]="['/']">Recipes</a>
+        </li>
+        <li>
+          <a [routerLink]="['/shopping-list']">Shopping List</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="right">
+    <!-- <mat-form-field>
+      <mat-label>Manage</mat-label>
+      <mat-select>
+        <mat-option>
+          <a href="#">Save Data</a>
+        </mat-option>
+        <mat-option>
+          <a href="#">Fetch Data</a>
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    <div class="manage">
+      <button>Manage</button>
+    </div>
+  </div>
+</div>

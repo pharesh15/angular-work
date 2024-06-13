@@ -1,1 +1,9 @@
-<app-recipe-item />
+<div class="recipe-list">
+  <button>New Recipe</button>
+  <hr />
+  <div class="recipe-items">
+    @for (recipeItem of recipeData; track recipeItem.id) {
+    <app-recipe-item [recipeItem]="recipeItem" />
+    }
+  </div>
+</div>

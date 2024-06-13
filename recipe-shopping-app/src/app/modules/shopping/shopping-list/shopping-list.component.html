@@ -1,1 +1,10 @@
-<app-shopping-edit />
+<div class="shopping-list">
+  <app-shopping-edit />
+  <div class="shopping-items">
+    <ul>
+      @for (ingredient of ingredientsData; track ingredient.id) {
+      <li>{{ ingredient.name }} ({{ ingredient.amount }})</li>
+      }
+    </ul>
+  </div>
+</div>

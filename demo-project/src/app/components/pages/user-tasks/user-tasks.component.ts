@@ -79,18 +79,17 @@ export class UserTasksComponent {
       this.isAddNewTaskScreenActive = val;
     });
 
-    this.usersService.selectedUser.subscribe((id) => {
-      console.log(id);
-      this.usersTasksData = this.tasksData.filter(
-        (task) => task.user_id === id
-      );
-    });
-
     this.tasksService.isCompleted.subscribe((id) => {
       this.usersTasksData = this.usersTasksData?.filter(
         (task) => task.id !== id
       );
     });
+  }
+
+  ngOnChanges(data: IUser): void {
+    this.usersTasksData = this.tasksData.filter(
+      (task) => task.user_id === this.data.id
+    );
   }
 
   ngAddTask(body: IAddTask) {

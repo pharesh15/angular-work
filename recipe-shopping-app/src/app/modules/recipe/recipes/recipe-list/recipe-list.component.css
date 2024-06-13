@@ -1,0 +1,21 @@
+.recipe-list {
+  width: 100%;
+}
+
+.recipe-list button {
+  background-color: var(--primary);
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+}
+
+hr {
+  margin: 1rem 0;
+  opacity: 0.5;
+}
+
+.recipe-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,89 @@
+.recipe-item {
+  width: 100%;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+  margin: 0.5rem 0;
+  padding: 0.8rem 1rem;
+  display: flex;
+}
+
+.item-img {
+  width: 4rem;
+}
+
+.content {
+  width: calc(100% - 4rem);
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+}
+
+.content h2 {
+  margin-bottom: 0.4rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-img img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+.content p {
+  font-size: 1rem;
+  --max-lines: 4;
+  --line-height: 1.4;
+  --font-size: 1rem;
+  line-height: var(--line-height);
+  font-size: var(--font-size);
+  max-height: calc(var(--max-lines) * var(--font-size) * var(--line-height));
+  text-align: justify;
+  overflow: hidden;
+}
+
+/* .content p {
+  --max-lines: 4;
+  --line-height: 1.4;
+  --font-size: 1rem;
+  line-height: var(--line-height);
+  font-size: var(--font-size);
+  max-height: calc(var(--max-lines) * var(--font-size) * var(--line-height));
+  min-height: calc(var(--max-lines) * var(--font-size) * var(--line-height));
+
+  text-align: justify;
+  overflow: hidden;
+  position: relative;
+}
+
+.content p:has(+ .expand-btn:not(:checked))::before {
+  content: "";
+  position: absolute;
+  height: calc(1rem * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, var(--white));
+}
+
+.expand-btn {
+  appearance: none;
+  width: fit-content;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: auto;
+  color: var(--link);
+}
+
+.expand-btn::before {
+  content: "Show more";
+}
+
+.expand-btn:checked::before {
+  content: "Show less";
+}
+
+.content p:has(+ .expand-btn:checked) {
+  max-height: none;
+} */

@@ -1,0 +1,38 @@
+.header {
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.logo {
+  margin-right: 2rem;
+}
+
+.navs ul li {
+  margin: 0 0.6rem;
+}
+
+.navs ul li:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  border-bottom: 2px solid var(--white);
+  transition: 0.6s ease-out;
+}
+
+.navs ul li:hover:after {
+  width: 100%;
+}
+
+.navs ul li a {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.manage button {
+  background-color: transparent;
+  color: var(--white);
+  font-size: 1rem;
+}
