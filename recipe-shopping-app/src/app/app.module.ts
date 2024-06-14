@@ -9,9 +9,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { provideRouter, RouterLink, RouterModule } from '@angular/router';
 import { routes } from './app.routes';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, DropdownDirective],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,

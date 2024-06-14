@@ -5,29 +5,28 @@
     </div>
     <div class="navs">
       <ul class="flex-center-between">
-        <li>
-          <a [routerLink]="['/']">Recipes</a>
+        <li
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/">Recipes</a>
         </li>
-        <li>
-          <a [routerLink]="['/shopping-list']">Shopping List</a>
+        <li routerLinkActive="active">
+          <a routerLink="/shopping-list">Shopping List</a>
         </li>
       </ul>
     </div>
   </div>
   <div class="right">
-    <!-- <mat-form-field>
-      <mat-label>Manage</mat-label>
-      <mat-select>
-        <mat-option>
-          <a href="#">Save Data</a>
-        </mat-option>
-        <mat-option>
-          <a href="#">Fetch Data</a>
-        </mat-option>
-      </mat-select>
-    </mat-form-field> -->
-    <div class="manage">
+    <div class="manage" (click)="toggleDropdown()">
       <button>Manage</button>
+      <img src="assets/icons/dropdown-arrow.png" alt="" />
+      @if(isOpen){
+      <div class="dropdown">
+        <a routerLink="/save-data">Save Data</a>
+        <a routerLink="/fetch-data">Fetch Data</a>
+      </div>
+      }
     </div>
   </div>
 </div>

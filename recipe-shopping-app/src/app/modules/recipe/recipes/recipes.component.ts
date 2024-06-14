@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Recipe } from './recipe.model';
+import { Recipe } from '../../../models/recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -7,9 +7,9 @@ import { Recipe } from './recipe.model';
   styleUrl: './recipes.component.css',
 })
 export class RecipesComponent {
-  recipeData: Recipe[] = [
-    new Recipe(1, 'A new recipe', 'This is simply a test!', 'recipe.jpg'),
-    new Recipe(2, 'A new recipe', 'This is simply a test!', 'recipe.jpg'),
-    new Recipe(3, 'A new recipe', 'This is simply a test!', 'recipe.jpg'),
-  ];
+  selectedRecipeDetails: Recipe | undefined = undefined;
+
+  onSelectedRecipeItem(item: Recipe) {
+    this.selectedRecipeDetails = item;
+  }
 }

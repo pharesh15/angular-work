@@ -1,9 +1,15 @@
 .shopping-edit {
-  width: 60%;
+  width: 30%;
 }
 
 .input-row {
   margin: 2rem 0;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
 }
 
 .input-field input {

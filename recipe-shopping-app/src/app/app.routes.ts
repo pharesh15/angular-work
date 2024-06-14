@@ -5,5 +5,4 @@ import { ShoppingListComponent } from './modules/shopping/shopping-list/shopping
 export const routes: Routes = [
   { path: '', component: RecipesComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
-  { path: '**', component: RecipesComponent },
 ];

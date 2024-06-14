@@ -1,8 +1,11 @@
 .header {
   background-color: var(--primary);
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
+  height: var(--header-height);
   color: var(--white);
+  padding: 2rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .logo {
@@ -22,6 +25,10 @@
   transition: 0.6s ease-out;
 }
 
+.active {
+  border-bottom: 2px solid var(--white);
+}
+
 .navs ul li:hover:after {
   width: 100%;
 }
@@ -31,8 +38,39 @@
   font-size: 1rem;
 }
 
+.manage {
+  display: flex;
+  align-items: center;
+}
+
 .manage button {
   background-color: transparent;
   color: var(--white);
   font-size: 1rem;
+}
+
+.manage img {
+  width: 2rem;
+}
+
+.dropdown {
+  width: 12rem;
+  position: absolute;
+  top: calc(var(--header-height) + 0.2rem);
+  right: 0;
+  background-color: #ebe8e8;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown a {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.dropdown a:hover {
+  background-color: var(--primary);
+  color: var(--white);
 }

@@ -6,13 +6,75 @@
 .recipe-details img {
   width: 50%;
   margin: auto;
-  border-radius: 100%;
 }
 
-.details button {
+.details {
+  margin: 1rem 0;
+}
+
+.details h1 {
+  font-size: 1.5rem;
+}
+
+.details p {
+  font-size: 1.2rem;
+}
+
+.manage {
+  display: flex;
+  align-items: center;
+  position: relative;
   background-color: var(--primary);
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
+  width: fit-content;
   border-radius: 0.2rem;
-  margin: 0.4rem 0;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+
+.manage button {
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.manage img {
+  width: 2rem;
+}
+
+.dropdown {
+  min-width: 10rem;
+  position: absolute;
+  top: 3.4rem;
+  left: 0;
+  background-color: #ebe8e8;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.dropdown a {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.dropdown a:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.ingredients {
+  margin-top: 1rem;
+}
+
+.ingredients ul li {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 1);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.ingredients ul li:hover {
+  background-color: #dedcdc;
 }

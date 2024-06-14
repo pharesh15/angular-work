@@ -1,8 +1,31 @@
 <div class="recipe-details">
-  <img src="assets/images/recipe.jpg" alt="recipe" />
+  @if(!recipeDetails){
+  <h2>Select recipe to see details</h2>
+  }@else {
+  <img [src]="'assets/images/' + recipeDetails.imagePath" alt="recipe" />
   <div class="details">
-    <h1 class="name">A Test Recipe</h1>
-    <button>Manage</button>
-    <p>This is simple a test ingredients</p>
+    <h1 class="name">{{ recipeDetails.name }}</h1>
+    <div class="manage" (click)="toggleDropdown()">
+      <button>Manage</button>
+      <img src="assets/icons/dropdown-arrow.png" alt="" />
+      @if(isOpen){
+      <div class="dropdown">
+        <a (click)="onAddNewIngredients(recipeDetails.ingredients)"
+          >To Shopping List</a
+        >
+        <a routerLink="/fetch-data">Edit Recipe</a>
+        <a routerLink="/fetch-data">Delete Recipe</a>
+      </div>
+      }
+    </div>
+    <p>{{ recipeDetails.description }}</p>
+    <div class="ingredients">
+      <ul>
+        @for (ingredient of recipeDetails.ingredients; track $index) {
+        <li>{{ ingredient.name }} ({{ ingredient.amount }})</li>
+        }
+      </ul>
+    </div>
   </div>
+  }
 </div>

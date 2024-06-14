@@ -2,8 +2,11 @@
   <button>New Recipe</button>
   <hr />
   <div class="recipe-items">
-    @for (recipeItem of recipeData; track recipeItem.id) {
+    @if(recipeData && recipeData.length > 0){ @for (recipeItem of recipeData;
+    track $index) {
     <app-recipe-item [recipeItem]="recipeItem" />
+    } }@else{
+    <p>No Data Found!</p>
     }
   </div>
 </div>

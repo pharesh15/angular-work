@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Recipe } from '../recipe.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Recipe } from '../../../../models/recipe.model';
+import { RecipeService } from '../../../../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,5 +8,11 @@ import { Recipe } from '../recipe.model';
   styleUrl: './recipe-list.component.css',
 })
 export class RecipeListComponent {
-  @Input({ required: true }) recipeData!: Recipe[];
+  recipeData: Recipe[] | undefined = undefined;
+
+  constructor(private recipeService: RecipeService) {}
+
+  ngOnInit(): void {
+    this.recipeData = this.recipeService.getAllRecipes();
+  }
 }

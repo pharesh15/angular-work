@@ -4,6 +4,7 @@
   margin: 0.5rem 0;
   padding: 0.8rem 1rem;
   display: flex;
+  cursor: pointer;
 }
 
 .item-img {
@@ -27,7 +28,6 @@
 
 .item-img img {
   width: 100%;
-  border-radius: 100%;
 }
 
 .content p {

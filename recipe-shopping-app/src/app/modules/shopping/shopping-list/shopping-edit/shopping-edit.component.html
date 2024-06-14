@@ -3,17 +3,17 @@
     <div class="input-row flex-center-between">
       <div class="input-field">
         <label for="name">Name</label>
-        <input id="name" type="text" />
+        <input id="name" type="text" #nameInput />
       </div>
 
       <div class="input-field">
         <label for="amount">Amount</label>
-        <input id="amount" type="number" />
+        <input id="amount" type="number" #amountInput />
       </div>
     </div>
 
     <div class="input-row">
-      <button type="submit" class="add">Add</button>
+      <button type="button" class="add" (click)="onSubmit()">Add</button>
       <button type="button" class="delete">Delete</button>
       <button type="button" class="clear">Clear</button>
     </div>

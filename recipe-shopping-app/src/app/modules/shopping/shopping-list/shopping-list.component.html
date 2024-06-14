@@ -1,10 +1,14 @@
 <div class="shopping-list">
   <app-shopping-edit />
+  @if(ingredientsData && ingredientsData.length > 0){
   <div class="shopping-items">
     <ul>
-      @for (ingredient of ingredientsData; track ingredient.id) {
+      @for (ingredient of ingredientsData; track $index) {
       <li>{{ ingredient.name }} ({{ ingredient.amount }})</li>
       }
     </ul>
   </div>
+  }@else{
+  <p>No Ingrediets Found!!</p>
+  }
 </div>
