@@ -6,10 +6,4 @@ import { Recipe } from '../../../models/recipe.model';
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css',
 })
-export class RecipesComponent {
-  selectedRecipeDetails: Recipe | undefined = undefined;
-
-  onSelectedRecipeItem(item: Recipe) {
-    this.selectedRecipeDetails = item;
-  }
-}
+export class RecipesComponent {}

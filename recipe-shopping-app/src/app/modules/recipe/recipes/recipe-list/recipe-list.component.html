@@ -1,5 +1,5 @@
 <div class="recipe-list">
-  <button>New Recipe</button>
+  <button type="button" (click)="onNewRecipe()">New Recipe</button>
   <hr />
   <div class="recipe-items">
     @if(recipeData && recipeData.length > 0){ @for (recipeItem of recipeData;

@@ -12,7 +12,7 @@ export class RecipeItemComponent {
 
   constructor(private recipeService: RecipeService) {}
 
-  selectRecipeItem() {
-    this.recipeService.selectedRecipe.emit(this.recipeItem);
-  }
+  // selectRecipeItem() {
+  //   this.recipeService.selectedRecipe.emit(this.recipeItem);
+  // }
 }

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Recipe } from '../../../../models/recipe.model';
 import { RecipeService } from '../../../../services/recipe.service';
 import { Ingredient } from '../../../../models/ingredient.model';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-details',
@@ -11,16 +12,27 @@ import { Ingredient } from '../../../../models/ingredient.model';
 export class RecipeDetailsComponent {
   recipeDetails: Recipe | undefined = undefined;
   isOpen: boolean = false;
+
   toggleDropdown() {
     this.isOpen = !this.isOpen;
   }
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(
+    private recipeService: RecipeService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.recipeService.selectedRecipe.subscribe((recipeItem) => {
-      this.recipeDetails = recipeItem;
+    this.route.params.subscribe((params: Params) => {
+      const id = +params['id'];
+      this.recipeDetails = this.recipeService.getRecipeById(id);
     });
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+    console.log(this.route);
   }
 
   onAddNewIngredients(ingredients: Ingredient[]) {

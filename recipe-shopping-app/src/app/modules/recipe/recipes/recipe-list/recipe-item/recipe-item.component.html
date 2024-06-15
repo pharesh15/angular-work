@@ -1,4 +1,4 @@
-<div class="recipe-item" (click)="selectRecipeItem()">
+<a [routerLink]="[recipeItem.id]" routerLinkActive="active" class="recipe-item">
   <div class="content">
     <h2 class="name">{{ recipeItem.name }}</h2>
     <p>
@@ -9,4 +9,4 @@
   <div class="item-img">
     <img [src]="'assets/images/' + recipeItem.imagePath" alt="recipe" />
   </div>
-</div>
+</a>

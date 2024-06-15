@@ -7,7 +7,12 @@ import { ShoppingModule } from './modules/shopping/shopping.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { provideRouter, RouterLink, RouterModule } from '@angular/router';
+import {
+  provideRouter,
+  RouterLink,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
 import { routes } from './app.routes';
 import { DropdownDirective } from './directives/dropdown.directive';
 
@@ -22,7 +27,8 @@ import { DropdownDirective } from './directives/dropdown.directive';
     MatSelectModule,
     RouterLink,
     RouterModule.forRoot(routes),
+    RouterOutlet,
   ],
-  providers: [provideAnimationsAsync(), provideRouter([])],
+  providers: [provideAnimationsAsync()],
 })
 export class AppModule {}

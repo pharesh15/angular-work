@@ -4,6 +4,9 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -11,8 +14,10 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
     RecipeDetailsComponent,
     RecipeListComponent,
     RecipeItemComponent,
+    RecipeStartComponent,
+    RecipeEditComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet, RouterLink],
   exports: [RecipesComponent],
 })
 export class RecipeModule {}
