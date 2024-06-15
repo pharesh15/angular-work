@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(36, 36, 192);
+  padding: 1rem;
+}
+
+.links a {
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-orders h3 {
+  color: #fff;
+}

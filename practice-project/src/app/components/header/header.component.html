@@ -1,0 +1,12 @@
+<div class="header">
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/private">Private</a>
+    <a routerLink="/login">Login</a>
+    <a (click)="onLogout()">Logout</a>
+  </div>
+
+  <div class="nav-orders">
+    <h3>Today's Orders : {{ dailyOrders }}</h3>
+  </div>
+</div>
