@@ -5,6 +5,8 @@
   --white: #fff;
   --black: #000;
   --link: #0000ff;
+  --danger: #a30909;
+  --secondary: #e46300;
 
   --header-height: 4rem;
 }
@@ -45,6 +47,10 @@ button {
   outline: none;
   border: none;
   color: var(--white);
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 
 .mat-typography h1,

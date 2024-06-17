@@ -28,6 +28,10 @@ export class ShoppingListComponent {
     this.shoppingListService.addNewIngredient(ingredient);
   }
 
+  editEngredient(editIndex: number) {
+    this.shoppingListService.startedEditing.next(editIndex);
+  }
+
   ngOnDestroy(): void {
     this.ingredientSubject?.unsubscribe();
   }

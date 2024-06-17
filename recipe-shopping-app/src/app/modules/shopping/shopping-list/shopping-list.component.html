@@ -4,7 +4,9 @@
   <div class="shopping-items">
     <ul>
       @for (ingredient of ingredientsData; track $index) {
-      <li>{{ ingredient.name }} ({{ ingredient.amount }})</li>
+      <li (click)="editEngredient($index)">
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </li>
       }
     </ul>
   </div>

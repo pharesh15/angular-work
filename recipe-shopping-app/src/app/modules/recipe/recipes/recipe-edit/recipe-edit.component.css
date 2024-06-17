@@ -1,0 +1,83 @@
+.recipe-edit {
+  padding: 2rem;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+input,
+textarea {
+  border-radius: 0.2rem;
+  outline: none;
+  border: 1px solid #aaa;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.actions button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+}
+
+.actions .save {
+  background-color: var(--primary);
+  color: var(--white);
+  margin-right: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.actions .cancel {
+  background-color: var(--danger);
+  color: var(--white);
+  border-radius: 0.2rem;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-group {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.ingredient-group .ing-name {
+  width: 60%;
+  min-width: 10rem;
+}
+
+.ingredient-group .ing-amount {
+  min-width: 6rem;
+  width: 40%;
+  margin: 0 0.6rem;
+}
+
+.ingredient-group .btn {
+  width: 100%;
+  text-align: right;
+}
+
+.ingredient-group .add {
+  background-color: var(--secondary);
+  padding: 0.6rem 1rem;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+}
+
+.ingredient-group .delete {
+  background-color: var(--danger);
+  /* padding: 0.6rem 0.8rem; */
+  width: 3.2rem;
+  height: 2.6rem;
+  border-radius: 0.2rem;
+}

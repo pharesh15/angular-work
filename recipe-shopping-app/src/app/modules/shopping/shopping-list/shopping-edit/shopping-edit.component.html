@@ -1,21 +1,32 @@
 <div class="shopping-edit">
-  <form>
+  <form (ngSubmit)="onSubmit(addForm)" #addForm="ngForm">
     <div class="input-row flex-center-between">
       <div class="input-field">
         <label for="name">Name</label>
-        <input id="name" type="text" #nameInput />
+        <input id="name" type="text" name="name" ngModel required />
       </div>
 
       <div class="input-field">
         <label for="amount">Amount</label>
-        <input id="amount" type="number" #amountInput />
+        <input
+          id="amount"
+          type="number"
+          name="amount"
+          ngModel
+          required
+          pattern="^[1-9]+[0-9]*$"
+        />
       </div>
     </div>
 
     <div class="input-row">
-      <button type="button" class="add" (click)="onSubmit()">Add</button>
-      <button type="button" class="delete">Delete</button>
-      <button type="button" class="clear">Clear</button>
+      <button type="submit" class="add" [disabled]="!addForm.valid">
+        {{ this.isEditMode ? "Update" : "Add" }}
+      </button>
+      @if(isEditMode){
+      <button type="button" class="delete" (click)="onDelete()">Delete</button>
+      }
+      <button type="button" class="clear" (click)="onClear()">Clear</button>
     </div>
   </form>
 </div>

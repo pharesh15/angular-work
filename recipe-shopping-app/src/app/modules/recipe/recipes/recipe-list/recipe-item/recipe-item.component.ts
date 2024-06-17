@@ -8,6 +8,7 @@ import { RecipeService } from '../../../../../services/recipe.service';
   styleUrl: './recipe-item.component.css',
 })
 export class RecipeItemComponent {
+  @Input({ required: true }) index!: number;
   @Input({ required: true }) recipeItem!: Recipe;
 
   constructor(private recipeService: RecipeService) {}

@@ -4,7 +4,7 @@
   <div class="recipe-items">
     @if(recipeData && recipeData.length > 0){ @for (recipeItem of recipeData;
     track $index) {
-    <app-recipe-item [recipeItem]="recipeItem" />
+    <app-recipe-item [index]="$index" [recipeItem]="recipeItem" />
     } }@else{
     <p>No Data Found!</p>
     }
