@@ -23,8 +23,8 @@
       <img src="assets/icons/dropdown-arrow.png" alt="" />
       @if(isOpen){
       <div class="dropdown">
-        <a routerLink="/save-data">Save Data</a>
-        <a routerLink="/fetch-data">Fetch Data</a>
+        <a (click)="saveData()">Save Data</a>
+        <a (click)="fetchData()">Fetch Data</a>
       </div>
       }
     </div>

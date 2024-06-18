@@ -12,6 +12,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class RecipeDetailsComponent {
   recipeDetails: Recipe | undefined = undefined;
   isOpen: boolean = false;
+  index: number | undefined = undefined;
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;
@@ -25,14 +26,20 @@ export class RecipeDetailsComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      const index = +params['id'];
-      this.recipeDetails = this.recipeService.getRecipeByIndex(index);
+      this.index = +params['id'];
+      this.recipeDetails = this.recipeService.getRecipeByIndex(this.index);
     });
   }
 
   onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route });
-    console.log(this.route);
+  }
+
+  onDeleteRecipe() {
+    if (this.index !== undefined) {
+      this.recipeService.deleteRecipe(this.index);
+      this.router.navigate(['/recipes']);
+    }
   }
 
   onAddNewIngredients(ingredients: Ingredient[]) {

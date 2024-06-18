@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataStorageService } from '../../services/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,17 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isOpen: boolean = false;
+  constructor(private dataStorageService: DataStorageService) {}
+
   toggleDropdown() {
     this.isOpen = !this.isOpen;
+  }
+
+  saveData() {
+    this.dataStorageService.storeData();
+  }
+
+  fetchData() {
+    this.dataStorageService.fetchData().subscribe();
   }
 }

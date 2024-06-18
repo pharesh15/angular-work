@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Recipe } from '../../../../models/recipe.model';
 import { RecipeService } from '../../../../services/recipe.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-list',
@@ -10,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RecipeListComponent {
   recipeData: Recipe[] | undefined = undefined;
+  recipeChangedSubscription?: Subscription;
 
   constructor(
     private recipeService: RecipeService,
@@ -27,5 +29,9 @@ export class RecipeListComponent {
 
   onNewRecipe() {
     this.router.navigate(['new'], { relativeTo: this.route });
+  }
+
+  ngOnDestroy(): void {
+    this.recipeChangedSubscription?.unsubscribe();
   }
 }

@@ -10,6 +10,8 @@ import { PrivateComponent } from './components/private/private.component';
 import { appRoutes } from './app.routes';
 import { RouterLink } from '@angular/router';
 import { AuthService } from './guard/auth.services';
+import { CommonModule } from '@angular/common';
+import { AddressPipe } from './pipes/address.pipe';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { AuthService } from './guard/auth.services';
     HomeComponent,
     LoginComponent,
     PrivateComponent,
+    AddressPipe,
   ],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, appRoutes, RouterLink],
+  imports: [BrowserModule, appRoutes, RouterLink, CommonModule],
   providers: [AuthService],
 })
 export class AppModule {}

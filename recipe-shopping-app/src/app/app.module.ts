@@ -15,6 +15,9 @@ import {
 } from '@angular/router';
 import { routes } from './app.routes';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './modules/auth/auth.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, DropdownDirective],
@@ -28,6 +31,9 @@ import { DropdownDirective } from './directives/dropdown.directive';
     RouterLink,
     RouterModule.forRoot(routes),
     RouterOutlet,
+    HttpClientModule,
+    AuthModule,
+    MatProgressSpinnerModule,
   ],
   providers: [provideAnimationsAsync()],
 })

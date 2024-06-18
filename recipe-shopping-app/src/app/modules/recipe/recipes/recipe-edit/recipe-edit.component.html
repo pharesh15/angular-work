@@ -17,7 +17,12 @@
         type="text"
         placeholder="Enter Image URL"
         formControlName="imagePath"
+        #imgRef
       />
+    </div>
+
+    <div *ngIf="imgRef.value" class="form-group">
+      <img [src]="'assets/images/' + imgRef.value" />
     </div>
 
     <div class="form-group">
@@ -33,6 +38,7 @@
     <div class="ingredients-list" formArrayName="ingredients">
       <!-- @if(recipeForm && controls){ @for(let ingredientControl of controls; track -->
       <!-- $index){ -->
+      @if(controls){
       <div
         class="ingredient-group"
         *ngFor="let ingredientControl of controls; let i = index"
@@ -40,8 +46,11 @@
       >
         <input class="ing-name" type="text" formControlName="name" />
         <input class="ing-amount" type="number" formControlName="amount" />
-        <button class="delete" type="button">X</button>
+        <button class="delete" type="button" (click)="onRemoveIngredient(i)">
+          X
+        </button>
       </div>
+      }
       <div class="ingredient-group">
         <div class="btn">
           <button class="add" type="button" (click)="onAddIngredient()">
@@ -57,7 +66,9 @@
         <button class="save" type="submit" [disabled]="!recipeForm.valid">
           Save
         </button>
-        <button class="cancel" type="button">Cancel</button>
+        <button class="cancel" type="button" (click)="onCancel()">
+          Cancel
+        </button>
       </div>
     </div>
   </form>
