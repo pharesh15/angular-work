@@ -9,15 +9,21 @@
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a routerLink="/recipes">Recipes</a>
+          <a *ngIf="isAuthenticated" routerLink="/recipes">Recipes</a>
         </li>
         <li routerLinkActive="active">
           <a routerLink="/shopping-list">Shopping List</a>
         </li>
+        <li routerLinkActive="active">
+          <a *ngIf="!isAuthenticated" routerLink="/auth">Signup/Login</a>
+        </li>
+        <li routerLinkActive="active">
+          <a *ngIf="isAuthenticated" (click)="onLogout()">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
-  <div class="right">
+  <div *ngIf="isAuthenticated" class="right">
     <div class="manage" (click)="toggleDropdown()">
       <button>Manage</button>
       <img src="assets/icons/dropdown-arrow.png" alt="" />

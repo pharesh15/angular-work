@@ -8,6 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {
+  PreloadAllModules,
   provideRouter,
   RouterLink,
   RouterModule,
@@ -15,26 +16,34 @@ import {
 } from '@angular/router';
 import { routes } from './app.routes';
 import { DropdownDirective } from './directives/dropdown.directive';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClientModule,
+  provideHttpClient,
+  withInterceptors,
+} from '@angular/common/http';
 import { AuthModule } from './modules/auth/auth.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { authInterceptorInterceptor } from './interceptors/auth-interceptor.interceptor';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, DropdownDirective],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
-    RecipeModule,
     ShoppingModule,
     MatFormFieldModule,
     MatSelectModule,
     RouterLink,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
     RouterOutlet,
     HttpClientModule,
     AuthModule,
     MatProgressSpinnerModule,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [
+    provideAnimationsAsync(),
+    provideHttpClient(withInterceptors([authInterceptorInterceptor])),
+  ],
 })
 export class AppModule {}

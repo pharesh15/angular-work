@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { DataStorageService } from '../../services/data-storage.service';
+import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +11,20 @@ import { DataStorageService } from '../../services/data-storage.service';
 })
 export class HeaderComponent {
   isOpen: boolean = false;
-  constructor(private dataStorageService: DataStorageService) {}
+  isAuthenticated: boolean = false;
+  userSubscription?: Subscription;
+
+  constructor(
+    private dataStorageService: DataStorageService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.userSubscription = this.authService.user.subscribe((result) => {
+      this.isAuthenticated = !!result;
+    });
+  }
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;
@@ -20,5 +36,13 @@ export class HeaderComponent {
 
   fetchData() {
     this.dataStorageService.fetchData().subscribe();
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription?.unsubscribe();
   }
 }

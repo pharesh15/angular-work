@@ -12,6 +12,8 @@ import { RouterLink } from '@angular/router';
 import { AuthService } from './guard/auth.services';
 import { CommonModule } from '@angular/common';
 import { AddressPipe } from './pipes/address.pipe';
+import { AnimationComponent } from './components/animation/animation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,18 @@ import { AddressPipe } from './pipes/address.pipe';
     HomeComponent,
     LoginComponent,
     PrivateComponent,
+    AnimationComponent,
     AddressPipe,
   ],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, appRoutes, RouterLink, CommonModule],
+  imports: [
+    BrowserModule,
+    appRoutes,
+    RouterLink,
+    CommonModule,
+    BrowserAnimationsModule,
+  ],
+
   providers: [AuthService],
 })
 export class AppModule {}
